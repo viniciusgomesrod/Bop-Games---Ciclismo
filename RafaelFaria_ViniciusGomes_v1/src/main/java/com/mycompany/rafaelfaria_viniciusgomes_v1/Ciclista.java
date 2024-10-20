@@ -21,6 +21,10 @@ public class Ciclista extends Participante {
         etapas.add(etapa);
     }
 
+    public List<Etapa> getEtapas() {
+        return etapas;
+    }
+    
     // Compara o tempo total de dois ciclistas ao final da competição
     public String compararComOutroCiclista(Ciclista outroCiclista) {
         Duration totalTempoCiclista1 = getTempoTotal();
@@ -69,7 +73,7 @@ public class Ciclista extends Participante {
     }
 
     // Calcula o tempo total gasto pelo ciclista em todas as etapas
-    private Duration getTempoTotal() {
+    public Duration getTempoTotal() {
         Duration tempoTotal = Duration.ZERO;
         for (Etapa etapa : etapas) {
             tempoTotal = tempoTotal.plus(etapa.getDuracao());
